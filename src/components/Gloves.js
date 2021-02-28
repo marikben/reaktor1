@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
+import Availability from './Availability';
+
 export default function Gloves() {
  
   const [gloves, setGloves] = useState([]);
@@ -33,6 +35,11 @@ export default function Gloves() {
       {
         Header: 'Manufacturer',
         accessor: 'manufacturer'
+      },
+      {
+        Header: 'Availability',
+        accessor: 'id',
+        Cell: row => <Availability id={row.original} />
       }
     ]
     
